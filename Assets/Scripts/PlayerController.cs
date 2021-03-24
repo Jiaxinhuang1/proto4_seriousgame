@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 8f;
+        speed = 3f;
         localScale = transform.localScale;
     }
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && GetComponent<Rigidbody2D>().velocity.y < 0.0001)
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * 300f);
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * 200f);
             jumpSound.Play();
         }
         if (Mathf.Abs(directionX) > 0)
@@ -65,11 +65,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") < 0)
         {
-            localScale.x = -1;
+            localScale.x = -0.25f;
         }
         if (Input.GetAxis("Horizontal") > 0)
         {
-            localScale.x = 1;
+            localScale.x = 0.25f;
         }
 
         transform.localScale = localScale;
