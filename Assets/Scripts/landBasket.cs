@@ -5,7 +5,14 @@ using UnityEngine;
 public class landBasket : MonoBehaviour
 {
     public ForestUI uiManager;
+
     public GameObject errorText;
+    private float timeBetweenPopup = 2f;
+
+    private void ResetPopup()
+    {
+        errorText.SetActive(false);
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,8 +23,9 @@ public class landBasket : MonoBehaviour
         }
         else if (collision.tag == "waterAnim" || collision.tag == "airAnim")
         {
-            Debug.Log("eror");
-            Instantiate(errorText, new Vector3(0, 0, 0), Quaternion.identity);
+            errorText.SetActive(true);
+            Invoke(nameof(ResetPopup), timeBetweenPopup);
+            
         }
     }
 }
