@@ -4,24 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class JunkyardUI : MonoBehaviour
 {
-    public Text junkText;
-    public Text veggiesText;
-    public Text fruitsText;
+    public Text metalText;
+    public Text plasticText;
+    public Text glassText;
 
-    public int junkCount;
-    public int veggiesCount;
-    public int fruitsCount;
+    public int metalCount;
+    public int plasticCount;
+    public int glassCount;
 
     public GameObject nextPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        junkCount = 0;
-        veggiesCount = 0;
-        fruitsCount = 0;
+        metalCount = 0;
+        plasticCount = 0;
+        glassCount = 0;
 
         nextPanel.SetActive(false);
     }
@@ -29,11 +29,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        junkText.text = "Junk Food: " + junkCount;
-        veggiesText.text = "Veggies: " + veggiesCount;
-        fruitsText.text = "Fruits: " + fruitsCount;
+        metalText.text = "Metal: " + metalCount;
+        plasticText.text = "Plastic: " + plasticCount;
+        glassText.text = "Glass: " + glassCount;
 
-        if (junkCount == 1 && veggiesCount == 1 && fruitsCount == 1)
+        if (metalCount == 1 && plasticCount == 1 && glassCount == 1)
         {
             nextPanel.SetActive(true);
         }

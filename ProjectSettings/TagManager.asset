@@ -7,6 +7,12 @@ TagManager:
   - JunkFood
   - Fruits
   - Veggies
+  - landAnim
+  - airAnim
+  - waterAnim
+  - metal
+  - plastic
+  - glass
   layers:
   - Default
   - TransparentFX

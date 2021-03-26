@@ -4,24 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class ForestUI : MonoBehaviour
 {
-    public Text junkText;
-    public Text veggiesText;
-    public Text fruitsText;
+    public Text landText;
+    public Text airText;
+    public Text waterText;
 
-    public int junkCount;
-    public int veggiesCount;
-    public int fruitsCount;
+    public int landCount;
+    public int airCount;
+    public int waterCount;
 
     public GameObject nextPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        junkCount = 0;
-        veggiesCount = 0;
-        fruitsCount = 0;
+        landCount = 0;
+        airCount = 0;
+        waterCount = 0;
 
         nextPanel.SetActive(false);
     }
@@ -29,11 +29,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        junkText.text = "Junk Food: " + junkCount;
-        veggiesText.text = "Veggies: " + veggiesCount;
-        fruitsText.text = "Fruits: " + fruitsCount;
+        landText.text = "Land Animal: " + landCount;
+        airText.text = "Air Animal: " + airCount;
+        waterText.text = "Water Animal: " + waterCount;
 
-        if (junkCount == 1 && veggiesCount == 1 && fruitsCount == 1)
+        if (landCount == 1 && airCount == 1 && waterCount == 1)
         {
             nextPanel.SetActive(true);
         }
