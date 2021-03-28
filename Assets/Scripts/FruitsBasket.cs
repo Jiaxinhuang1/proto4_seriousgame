@@ -7,7 +7,8 @@ public class FruitsBasket : MonoBehaviour
     public UIManager uiManager;
     public GameObject errorText;
     private float timeBetweenPopup = 2f;
-
+    public AudioSource collectSound;
+    public AudioSource errorSound;
     private void ResetPopup()
     {
         errorText.SetActive(false);
@@ -17,11 +18,13 @@ public class FruitsBasket : MonoBehaviour
         if (collision.tag == "Fruits")
         {
             uiManager.fruitsCount += 1;
+            collectSound.Play();
             Destroy(collision.gameObject);
         }
         else if (collision.tag == "Veggies" || collision.tag == "JunkFood")
         {
             errorText.SetActive(true);
+            errorSound.Play();
             Invoke(nameof(ResetPopup), timeBetweenPopup);
 
         }

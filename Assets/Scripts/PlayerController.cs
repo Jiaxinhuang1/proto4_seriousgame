@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private float directionX;
     private Vector3 localScale;
-    //public AudioSource jumpSound;
+    public AudioSource jumpSound;
 
 
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && GetComponent<Rigidbody2D>().velocity.y < 0.0001)
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * 250f);
-            //jumpSound.Play();
+            jumpSound.Play();
         }
         if (Mathf.Abs(directionX) > 0)
         {

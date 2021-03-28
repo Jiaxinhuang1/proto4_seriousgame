@@ -8,6 +8,8 @@ public class AirBasket : MonoBehaviour
 
     public GameObject errorText;
     private float timeBetweenPopup = 2f;
+    public AudioSource collectSound;
+    public AudioSource errorSound;
 
     private void ResetPopup()
     {
@@ -18,11 +20,13 @@ public class AirBasket : MonoBehaviour
         if (collision.tag == "airAnim")
         {
             uiManager.airCount += 1;
+            collectSound.Play();
             Destroy(collision.gameObject);
         }
         else if (collision.tag == "waterAnim" || collision.tag == "landAnim")
         {
             errorText.SetActive(true);
+            errorSound.Play();
             Invoke(nameof(ResetPopup), timeBetweenPopup);
         }
     }
