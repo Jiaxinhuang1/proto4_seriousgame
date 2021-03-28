@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
         veggiesText.text = "Veggies: " + veggiesCount;
         fruitsText.text = "Fruits: " + fruitsCount;
 
-        if (junkCount == 1 && veggiesCount == 1 && fruitsCount == 1)
+        if (junkCount >= 3 && veggiesCount >= 3 && fruitsCount >= 3)
         {
             nextPanel.SetActive(true);
         }

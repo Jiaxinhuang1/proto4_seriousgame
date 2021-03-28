@@ -33,7 +33,7 @@ public class JunkyardUI : MonoBehaviour
         plasticText.text = "Plastic: " + plasticCount;
         glassText.text = "Glass: " + glassCount;
 
-        if (metalCount == 1 && plasticCount == 1 && glassCount == 1)
+        if (metalCount >= 2 && plasticCount >= 2 && glassCount >= 2)
         {
             nextPanel.SetActive(true);
         }

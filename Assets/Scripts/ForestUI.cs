@@ -33,7 +33,7 @@ public class ForestUI : MonoBehaviour
         airText.text = "Air Animal: " + airCount;
         waterText.text = "Water Animal: " + waterCount;
 
-        if (landCount == 1 && airCount == 1 && waterCount == 1)
+        if (landCount >= 2 && airCount >= 2 && waterCount >= 2)
         {
             nextPanel.SetActive(true);
         }
